@@ -1,0 +1,11 @@
+truncate table OrderH;
+truncate table OrderI;
+truncate table SysLog;
+truncate table SyncChangeDataTable;
+truncate table SyncDataTable;
+truncate table SyncTableLog;
+truncate table EftLog;
+truncate table recvacct;
+truncate table TrackingSource;
+truncate table TrackingSync;
+truncate table DrawerOpenRecordTable;

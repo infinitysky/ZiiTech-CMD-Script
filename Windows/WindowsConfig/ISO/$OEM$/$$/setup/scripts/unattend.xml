@@ -1,0 +1,134 @@
+<!--*************************************************
+Windows 10 Answer File Generator
+Created using Windows AFG found at:
+;http://www.windowsafg.com
+
+Installation Notes
+Location: 
+Notes: 
+**************************************************-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+
+<settings pass="offlineServicing">
+<component name="Microsoft-Windows-LUA-Settings" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<EnableLUA>true</EnableLUA>
+</component>
+</settings>
+<settings pass="generalize">
+<component name="Microsoft-Windows-Security-SPP" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SkipRearm>1</SkipRearm>
+</component>
+</settings>
+
+
+<settings pass="specialize">
+<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<InputLocale>0c09:00000409</InputLocale>
+<SystemLocale>en-AU</SystemLocale>
+<UILanguage>en-AU</UILanguage>
+<UILanguageFallback>en-AU</UILanguageFallback>
+<UserLocale>en-AU</UserLocale>
+</component>
+
+<component name="Microsoft-Windows-Security-SPP-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SkipAutoActivation>true</SkipAutoActivation>
+</component>
+<component name="Microsoft-Windows-SQMApi" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<CEIPEnabled>0</CEIPEnabled>
+</component>
+
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ComputerName></ComputerName>
+<ProductKey>----</ProductKey>
+</component>
+</settings>
+
+
+
+<settings pass="oobeSystem">
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<AutoLogon>
+<Password>
+<Value>0000</Value>
+<PlainText>true</PlainText>
+</Password>
+<Enabled>false</Enabled>
+<Username>Ziitech</Username>
+</AutoLogon>
+
+<OOBE>
+<HideEULAPage>true</HideEULAPage>
+<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+<HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+<NetworkLocation>Work</NetworkLocation>
+<SkipUserOOBE>true</SkipUserOOBE>
+<SkipMachineOOBE>true</SkipMachineOOBE>
+<ProtectYourPC>1</ProtectYourPC>
+</OOBE>
+
+<UserAccounts>
+<LocalAccounts>
+<LocalAccount wcm:action="add">
+<Password>
+<Value>0000</Value>
+<PlainText>true</PlainText>
+</Password>
+<Description></Description>
+<DisplayName>Ziitech</DisplayName>
+<Group>Administrators</Group>
+<Name>Ziitech</Name>
+</LocalAccount>
+</LocalAccounts>
+</UserAccounts>
+
+<RegisteredOrganization>ZiiTech</RegisteredOrganization>
+<RegisteredOwner>Ziitech</RegisteredOwner>
+<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
+
+<OEMInformation>
+   <SupportProvider>ZiiTECH</SupportProvider>
+   <SupportAppURL>ZiiTECH</SupportAppURL>
+   <SupportURL>http://www.ziicloud.com</SupportURL>
+   <Manufacturer>ZiiTECH</Manufacturer>
+   <Model>ZiiPOS</Model>
+   <SupportHours>9:00 - 17:00</SupportHours>
+   <Logo>C:\Windows\System32\oobe\info\ZiiTECHLogo.bmp</Logo>
+</OEMInformation>
+
+<FirstLogonCommands>
+
+<SynchronousCommand wcm:action="add">
+<Description>Control Panel View</Description>
+<Order>1</Order>
+<CommandLine>reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v StartupPage /t REG_DWORD /d 0 /f</CommandLine>
+<RequiresUserInput>true</RequiresUserInput>
+</SynchronousCommand>
+
+
+<SynchronousCommand wcm:action="add">
+<Order>2</Order>
+<Description>Control Panel Icon Size</Description>
+<RequiresUserInput>false</RequiresUserInput>
+<CommandLine>reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v AllItemsIconView /t REG_DWORD /d 0 /f</CommandLine>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<Order>3</Order>
+<RequiresUserInput>false</RequiresUserInput>
+<CommandLine>cmd /C wmic useraccount where name="Ziitech" set PasswordExpires=false</CommandLine>
+<Description>Password Never Expires</Description>
+</SynchronousCommand>
+
+
+</FirstLogonCommands>
+
+<TimeZone>AUS Eastern Standard Time</TimeZone>
+</component>
+</settings>
+
+
+
+</unattend>
