@@ -9,3 +9,6 @@ truncate table recvacct;
 truncate table TrackingSource;
 truncate table TrackingSync;
 truncate table DrawerOpenRecordTable;
+truncate table printjob;
+truncate table CancelSalesItem;
+truncate table CancelSalesHead;
