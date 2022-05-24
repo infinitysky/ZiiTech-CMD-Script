@@ -1,0 +1,33 @@
+delete from OrderH;
+delete from OrderI;
+delete from SysLog;
+delete from SyncChangeDataTable;
+delete from SyncDataTable;
+delete from SyncTableLog;
+delete from recvacct;
+delete from DrawerOpenRecordTable;
+delete from draweropenrecords;
+delete from printjob;
+delete from EftTransactionActive;
+delete from EftMerReceipt;
+delete from EftSettlement；
+delete from EftMachinePair;
+delete from EftLog;
+delete from trackingevent;
+delete from ChannelPaymentActivity;
+delete from CancelSalesItem;
+delete from CancelSalesHead;
+delete from CashDeclaration;
+delete from CashFloatTable;
+delete from TrackingSync;
+delete from trackingresource;
+delete from TrackingSource;
+delete from TyroReport;
+delete from KitchenScreen;
+delete from SelfOrderingEvents;
+delete from PurchaseItem;
+delete from PurchaseHead;
+delete from BankTransaction;
+delete from Attendance;
+
+

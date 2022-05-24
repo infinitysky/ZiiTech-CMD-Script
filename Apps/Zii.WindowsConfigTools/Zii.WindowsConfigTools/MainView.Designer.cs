@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SetAUTimeZoneButton = new System.Windows.Forms.Button();
             this.SystemSettinginitButton = new System.Windows.Forms.Button();
             this.addNewNETPrinterButton = new System.Windows.Forms.Button();
@@ -59,22 +59,22 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // SetAUTimeZoneButton
             // 
-            this.SetAUTimeZoneButton.Location = new System.Drawing.Point(12, 110);
+            this.SetAUTimeZoneButton.Location = new System.Drawing.Point(122, 110);
             this.SetAUTimeZoneButton.Name = "SetAUTimeZoneButton";
             this.SetAUTimeZoneButton.Size = new System.Drawing.Size(128, 48);
             this.SetAUTimeZoneButton.TabIndex = 1;
@@ -83,7 +83,7 @@
             // 
             // SystemSettinginitButton
             // 
-            this.SystemSettinginitButton.Location = new System.Drawing.Point(12, 45);
+            this.SystemSettinginitButton.Location = new System.Drawing.Point(122, 56);
             this.SystemSettinginitButton.Name = "SystemSettinginitButton";
             this.SystemSettinginitButton.Size = new System.Drawing.Size(128, 48);
             this.SystemSettinginitButton.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             // addNewNETPrinterButton
             // 
-            this.addNewNETPrinterButton.Location = new System.Drawing.Point(499, 45);
+            this.addNewNETPrinterButton.Location = new System.Drawing.Point(499, 56);
             this.addNewNETPrinterButton.Name = "addNewNETPrinterButton";
             this.addNewNETPrinterButton.Size = new System.Drawing.Size(103, 48);
             this.addNewNETPrinterButton.TabIndex = 3;
