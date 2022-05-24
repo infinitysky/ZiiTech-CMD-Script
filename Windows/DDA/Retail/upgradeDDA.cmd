@@ -17,7 +17,7 @@ echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZiiPOSClassicRetail.exe");>> do
 
 PowerShell.exe -ExecutionPolicy Bypass .\downloadDDA.ps1
 
-AssistantServer(v1.2.1)
+::AssistantServer(v1.2.1)
 taskkill /IM "AssistantServer(v1.2.1).exe" /F
 taskkill /IM "ZiiPOSClassicRetail.exe" /F
 ZiiPOSClassicRetail.exe /S
