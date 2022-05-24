@@ -16,7 +16,7 @@ truncate table printjob;
 
 truncate table EftTransactionActive;
 truncate table EftMerReceipt;
-truncate table EftSettlement；
+truncate table EftSettlement;
 truncate table EftMachinePair;
 truncate table EftLog;
 
