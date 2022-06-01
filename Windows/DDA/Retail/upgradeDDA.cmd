@@ -22,4 +22,7 @@ taskkill /IM "AssistantServer(v1.2.1).exe" /F
 taskkill /IM "ZiiPOSClassicRetail.exe" /F
 ZiiPOSClassicRetail.exe /S
 
+DEL ZiiPOSClassicRetail.exe
+DEL downloadDDA.ps1
+
 pause
