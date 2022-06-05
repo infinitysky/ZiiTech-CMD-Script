@@ -19,4 +19,7 @@ powershell.exe -ExecutionPolicy Bypass .\downloadZiisync.ps1
 taskkill /IM "Zii.Sync.exe" /F
 ZiiSyncSetup.exe /S
 
+DEL ZiiSyncSetup.exe
+DEL downloadZiisync.ps1
+
 pause

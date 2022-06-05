@@ -25,4 +25,4 @@ ZiiPOSClassicRetail.exe /S
 DEL ZiiPOSClassicRetail.exe
 DEL downloadDDA.ps1
 
-pause
+exit
