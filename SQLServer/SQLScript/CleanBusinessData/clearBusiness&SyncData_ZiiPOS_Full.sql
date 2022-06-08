@@ -1,9 +1,6 @@
 delete from OrderH;
 delete from OrderI;
 delete from SysLog;
-delete from SyncChangeDataTable;
-delete from SyncDataTable;
-delete from SyncTableLog;
 delete from recvacct;
 delete from DrawerOpenRecordTable;
 delete from draweropenrecords;
