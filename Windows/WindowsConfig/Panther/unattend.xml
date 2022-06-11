@@ -90,6 +90,12 @@
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <Order>5</Order>
+                    <CommandLine>D:\ZiiTECH_D\03_Softwares\System_Configuration\WindowsConfig\WindowsSystem\AutoRebootSystem.cmd</CommandLine>
+                    <Description>auto reboot at 5:00 AM</Description>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>6</Order>
                     <CommandLine>D:\ZiiTECH_D\03_Softwares\AutoInstall\00_InstallApps.bat</CommandLine>
                     <Description>Install Libs</Description>
                     <RequiresUserInput>false</RequiresUserInput>
