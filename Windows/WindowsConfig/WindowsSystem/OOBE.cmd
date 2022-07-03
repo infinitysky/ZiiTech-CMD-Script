@@ -59,3 +59,5 @@ reg add "HKCU\SOFTWARE\Microsoft\TabletTip\1.7" /V TipbandDesiredVisibility /T R
 
 :CLEANUP
 del /F /Q %systemroot%\setup\scripts\oobe.cmd
+
+exit

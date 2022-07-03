@@ -12,4 +12,4 @@ echo update SyncTableLog set FailCount^=0 where FailCount^>^=10; >>resync.sql
 
 DEL resync.sql
 
-pause
+exit

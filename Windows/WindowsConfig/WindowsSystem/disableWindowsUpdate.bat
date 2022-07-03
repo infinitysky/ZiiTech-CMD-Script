@@ -13,4 +13,4 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\WindowsStore" /v AutoDownload /t REG_D
 schtasks /Change /TN "\Microsoft\Windows\WindowsUpdate\Scheduled Start" /Disable
 schtasks /Change /TN "\Microsoft\Windows\Windows Defender\Windows Defender Scheduled Scan" /Disable
 
-pause
+exit

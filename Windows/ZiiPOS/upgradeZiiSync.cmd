@@ -22,4 +22,4 @@ ZiiSyncSetup.exe /S
 DEL ZiiSyncSetup.exe
 DEL downloadZiisync.ps1
 
-pause
+exit
