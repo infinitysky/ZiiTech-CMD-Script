@@ -8,3 +8,13 @@ D:\NANLI_DEV\ZiiTech-CMD-Script\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigToo
 D:\NANLI_DEV\ZiiTech-CMD-Script\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.exe
 D:\NANLI_DEV\ZiiTech-CMD-Script\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.pdb
 D:\NANLI_DEV\ZiiTech-CMD-Script\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.MainView.resources
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\bin\Debug\Zii.WindowsConfigTools.exe.config
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\bin\Debug\Zii.WindowsConfigTools.exe
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\bin\Debug\Zii.WindowsConfigTools.pdb
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.csproj.AssemblyReference.cache
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.MainView.resources
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.Properties.Resources.resources
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.csproj.GenerateResource.cache
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.csproj.CoreCompileInputs.cache
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.exe
+D:\NANLI_DEV\ZiiTech-CMD-Script1\Apps\Zii.WindowsConfigTools\Zii.WindowsConfigTools\obj\Debug\Zii.WindowsConfigTools.pdb
