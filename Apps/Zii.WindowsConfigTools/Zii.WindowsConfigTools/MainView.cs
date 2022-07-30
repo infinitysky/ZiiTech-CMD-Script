@@ -130,5 +130,24 @@ namespace Zii.WindowsConfigTools
 
             newForm.Visible = true;
         }
+
+        private void EnableFirewallForDDAButton_Click(object sender, EventArgs e)
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\SetZiiPOSPort.bat";
+            try
+            {
+
+                System.Diagnostics.Process.Start(execBatchFileName);
+                MessageBox.Show("Process completed, please check your Port");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                //Console.WriteLine(ex.StackTrace.ToString());
+            }
+
+        }
     }
 }

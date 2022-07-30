@@ -40,6 +40,7 @@
             this.setTimeZoneTOSAButton = new System.Windows.Forms.Button();
             this.enableFirewallForZiiPOSButton = new System.Windows.Forms.Button();
             this.checkPortOpenViewButton = new System.Windows.Forms.Button();
+            this.EnableFirewallForDDAButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(968, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(729, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,7 +78,7 @@
             // 
             // SetAUTimeZoneButton
             // 
-            this.SetAUTimeZoneButton.Location = new System.Drawing.Point(122, 110);
+            this.SetAUTimeZoneButton.Location = new System.Drawing.Point(83, 110);
             this.SetAUTimeZoneButton.Name = "SetAUTimeZoneButton";
             this.SetAUTimeZoneButton.Size = new System.Drawing.Size(128, 48);
             this.SetAUTimeZoneButton.TabIndex = 1;
@@ -87,7 +88,7 @@
             // 
             // SystemSettinginitButton
             // 
-            this.SystemSettinginitButton.Location = new System.Drawing.Point(122, 56);
+            this.SystemSettinginitButton.Location = new System.Drawing.Point(83, 56);
             this.SystemSettinginitButton.Name = "SystemSettinginitButton";
             this.SystemSettinginitButton.Size = new System.Drawing.Size(128, 48);
             this.SystemSettinginitButton.TabIndex = 2;
@@ -96,7 +97,7 @@
             // 
             // addNewNETPrinterButton
             // 
-            this.addNewNETPrinterButton.Location = new System.Drawing.Point(256, 56);
+            this.addNewNETPrinterButton.Location = new System.Drawing.Point(228, 56);
             this.addNewNETPrinterButton.Name = "addNewNETPrinterButton";
             this.addNewNETPrinterButton.Size = new System.Drawing.Size(128, 48);
             this.addNewNETPrinterButton.TabIndex = 3;
@@ -105,7 +106,7 @@
             // 
             // addOKAMINETPrinterButton
             // 
-            this.addOKAMINETPrinterButton.Location = new System.Drawing.Point(256, 110);
+            this.addOKAMINETPrinterButton.Location = new System.Drawing.Point(228, 110);
             this.addOKAMINETPrinterButton.Name = "addOKAMINETPrinterButton";
             this.addOKAMINETPrinterButton.Size = new System.Drawing.Size(128, 48);
             this.addOKAMINETPrinterButton.TabIndex = 4;
@@ -114,7 +115,7 @@
             // 
             // setTimeZoneTOSAButton
             // 
-            this.setTimeZoneTOSAButton.Location = new System.Drawing.Point(122, 164);
+            this.setTimeZoneTOSAButton.Location = new System.Drawing.Point(83, 164);
             this.setTimeZoneTOSAButton.Name = "setTimeZoneTOSAButton";
             this.setTimeZoneTOSAButton.Size = new System.Drawing.Size(128, 48);
             this.setTimeZoneTOSAButton.TabIndex = 5;
@@ -124,7 +125,7 @@
             // 
             // enableFirewallForZiiPOSButton
             // 
-            this.enableFirewallForZiiPOSButton.Location = new System.Drawing.Point(390, 56);
+            this.enableFirewallForZiiPOSButton.Location = new System.Drawing.Point(374, 110);
             this.enableFirewallForZiiPOSButton.Name = "enableFirewallForZiiPOSButton";
             this.enableFirewallForZiiPOSButton.Size = new System.Drawing.Size(128, 48);
             this.enableFirewallForZiiPOSButton.TabIndex = 6;
@@ -134,7 +135,7 @@
             // 
             // checkPortOpenViewButton
             // 
-            this.checkPortOpenViewButton.Location = new System.Drawing.Point(524, 56);
+            this.checkPortOpenViewButton.Location = new System.Drawing.Point(508, 56);
             this.checkPortOpenViewButton.Name = "checkPortOpenViewButton";
             this.checkPortOpenViewButton.Size = new System.Drawing.Size(127, 48);
             this.checkPortOpenViewButton.TabIndex = 7;
@@ -142,11 +143,22 @@
             this.checkPortOpenViewButton.UseVisualStyleBackColor = true;
             this.checkPortOpenViewButton.Click += new System.EventHandler(this.checkPortOpenViewButton_Click);
             // 
+            // EnableFirewallForDDAButton
+            // 
+            this.EnableFirewallForDDAButton.Location = new System.Drawing.Point(374, 56);
+            this.EnableFirewallForDDAButton.Name = "EnableFirewallForDDAButton";
+            this.EnableFirewallForDDAButton.Size = new System.Drawing.Size(128, 48);
+            this.EnableFirewallForDDAButton.TabIndex = 8;
+            this.EnableFirewallForDDAButton.Text = "Enable Firewall For DDA";
+            this.EnableFirewallForDDAButton.UseVisualStyleBackColor = true;
+            this.EnableFirewallForDDAButton.Click += new System.EventHandler(this.EnableFirewallForDDAButton_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 548);
+            this.ClientSize = new System.Drawing.Size(729, 548);
+            this.Controls.Add(this.EnableFirewallForDDAButton);
             this.Controls.Add(this.checkPortOpenViewButton);
             this.Controls.Add(this.enableFirewallForZiiPOSButton);
             this.Controls.Add(this.setTimeZoneTOSAButton);
@@ -180,6 +192,7 @@
         private System.Windows.Forms.Button setTimeZoneTOSAButton;
         private System.Windows.Forms.Button enableFirewallForZiiPOSButton;
         private System.Windows.Forms.Button checkPortOpenViewButton;
+        private System.Windows.Forms.Button EnableFirewallForDDAButton;
     }
 }
 
