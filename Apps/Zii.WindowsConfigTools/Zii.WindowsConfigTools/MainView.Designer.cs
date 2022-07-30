@@ -37,6 +37,9 @@
             this.SystemSettinginitButton = new System.Windows.Forms.Button();
             this.addNewNETPrinterButton = new System.Windows.Forms.Button();
             this.addOKAMINETPrinterButton = new System.Windows.Forms.Button();
+            this.setTimeZoneTOSAButton = new System.Windows.Forms.Button();
+            this.enableFirewallForZiiPOSButton = new System.Windows.Forms.Button();
+            this.checkPortOpenViewButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +50,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(968, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,7 +65,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -78,8 +81,9 @@
             this.SetAUTimeZoneButton.Name = "SetAUTimeZoneButton";
             this.SetAUTimeZoneButton.Size = new System.Drawing.Size(128, 48);
             this.SetAUTimeZoneButton.TabIndex = 1;
-            this.SetAUTimeZoneButton.Text = "Set Time Zone To Australia";
+            this.SetAUTimeZoneButton.Text = "Set Time Zone To MEL/SYD time";
             this.SetAUTimeZoneButton.UseVisualStyleBackColor = true;
+            this.SetAUTimeZoneButton.Click += new System.EventHandler(this.SetAUTimeZoneButton_Click);
             // 
             // SystemSettinginitButton
             // 
@@ -92,27 +96,60 @@
             // 
             // addNewNETPrinterButton
             // 
-            this.addNewNETPrinterButton.Location = new System.Drawing.Point(499, 56);
+            this.addNewNETPrinterButton.Location = new System.Drawing.Point(256, 56);
             this.addNewNETPrinterButton.Name = "addNewNETPrinterButton";
-            this.addNewNETPrinterButton.Size = new System.Drawing.Size(103, 48);
+            this.addNewNETPrinterButton.Size = new System.Drawing.Size(128, 48);
             this.addNewNETPrinterButton.TabIndex = 3;
             this.addNewNETPrinterButton.Text = "Add New NET Printer";
             this.addNewNETPrinterButton.UseVisualStyleBackColor = true;
             // 
             // addOKAMINETPrinterButton
             // 
-            this.addOKAMINETPrinterButton.Location = new System.Drawing.Point(499, 110);
+            this.addOKAMINETPrinterButton.Location = new System.Drawing.Point(256, 110);
             this.addOKAMINETPrinterButton.Name = "addOKAMINETPrinterButton";
-            this.addOKAMINETPrinterButton.Size = new System.Drawing.Size(103, 48);
+            this.addOKAMINETPrinterButton.Size = new System.Drawing.Size(128, 48);
             this.addOKAMINETPrinterButton.TabIndex = 4;
             this.addOKAMINETPrinterButton.Text = "Add OKAMI NET Printer";
             this.addOKAMINETPrinterButton.UseVisualStyleBackColor = true;
+            // 
+            // setTimeZoneTOSAButton
+            // 
+            this.setTimeZoneTOSAButton.Location = new System.Drawing.Point(122, 164);
+            this.setTimeZoneTOSAButton.Name = "setTimeZoneTOSAButton";
+            this.setTimeZoneTOSAButton.Size = new System.Drawing.Size(128, 48);
+            this.setTimeZoneTOSAButton.TabIndex = 5;
+            this.setTimeZoneTOSAButton.Text = "Set Time Zone To South Australia";
+            this.setTimeZoneTOSAButton.UseVisualStyleBackColor = true;
+            this.setTimeZoneTOSAButton.Click += new System.EventHandler(this.setTimeZoneTOSAButton_Click);
+            // 
+            // enableFirewallForZiiPOSButton
+            // 
+            this.enableFirewallForZiiPOSButton.Location = new System.Drawing.Point(390, 56);
+            this.enableFirewallForZiiPOSButton.Name = "enableFirewallForZiiPOSButton";
+            this.enableFirewallForZiiPOSButton.Size = new System.Drawing.Size(128, 48);
+            this.enableFirewallForZiiPOSButton.TabIndex = 6;
+            this.enableFirewallForZiiPOSButton.Text = "Enable Firewall For ZiiPOS";
+            this.enableFirewallForZiiPOSButton.UseVisualStyleBackColor = true;
+            this.enableFirewallForZiiPOSButton.Click += new System.EventHandler(this.enableFirewallForZiiPOSButton_Click);
+            // 
+            // checkPortOpenViewButton
+            // 
+            this.checkPortOpenViewButton.Location = new System.Drawing.Point(524, 56);
+            this.checkPortOpenViewButton.Name = "checkPortOpenViewButton";
+            this.checkPortOpenViewButton.Size = new System.Drawing.Size(127, 48);
+            this.checkPortOpenViewButton.TabIndex = 7;
+            this.checkPortOpenViewButton.Text = "Check Open Port (TCP)";
+            this.checkPortOpenViewButton.UseVisualStyleBackColor = true;
+            this.checkPortOpenViewButton.Click += new System.EventHandler(this.checkPortOpenViewButton_Click);
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(968, 548);
+            this.Controls.Add(this.checkPortOpenViewButton);
+            this.Controls.Add(this.enableFirewallForZiiPOSButton);
+            this.Controls.Add(this.setTimeZoneTOSAButton);
             this.Controls.Add(this.addOKAMINETPrinterButton);
             this.Controls.Add(this.addNewNETPrinterButton);
             this.Controls.Add(this.SystemSettinginitButton);
@@ -140,6 +177,9 @@
         private System.Windows.Forms.Button SystemSettinginitButton;
         private System.Windows.Forms.Button addNewNETPrinterButton;
         private System.Windows.Forms.Button addOKAMINETPrinterButton;
+        private System.Windows.Forms.Button setTimeZoneTOSAButton;
+        private System.Windows.Forms.Button enableFirewallForZiiPOSButton;
+        private System.Windows.Forms.Button checkPortOpenViewButton;
     }
 }
 

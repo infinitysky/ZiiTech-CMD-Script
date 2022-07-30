@@ -22,6 +22,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en-AU</TargetCulture>
+    <PublisherName>Zii</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -61,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PortCheckingView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PortCheckingView.Designer.cs">
+      <DependentUpon>PortCheckingView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortCheckingView.resx">
+      <DependentUpon>PortCheckingView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +110,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WindowsSystemConfigrations\SetTimeZone-AU_MEL.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WindowsSystemConfigrations\ZiiPOSPort.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WindowsSystemConfigrations\SystemConfig.bat" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

@@ -1,0 +1,6 @@
+Apps/Zii.WindowsConfigTools/Zii.WindowsConfigTools/bin/
+Apps/Zii.WindowsConfigTools/Zii.WindowsConfigTools/obj/
+# Ignore Mac system files
+.DS_store
+TB_windows10_LTSC_2021_20.bat
+ZiiTech_windows10_activate.bat
