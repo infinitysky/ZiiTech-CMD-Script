@@ -41,6 +41,9 @@
             this.enableFirewallForZiiPOSButton = new System.Windows.Forms.Button();
             this.checkPortOpenViewButton = new System.Windows.Forms.Button();
             this.EnableFirewallForDDAButton = new System.Windows.Forms.Button();
+            this.createZiitechAccountButton = new System.Windows.Forms.Button();
+            this.disableWindowsUpdatesButton = new System.Windows.Forms.Button();
+            this.checkLicenseServerButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +69,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -75,10 +78,11 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // SetAUTimeZoneButton
             // 
-            this.SetAUTimeZoneButton.Location = new System.Drawing.Point(83, 110);
+            this.SetAUTimeZoneButton.Location = new System.Drawing.Point(83, 164);
             this.SetAUTimeZoneButton.Name = "SetAUTimeZoneButton";
             this.SetAUTimeZoneButton.Size = new System.Drawing.Size(128, 48);
             this.SetAUTimeZoneButton.TabIndex = 1;
@@ -88,7 +92,7 @@
             // 
             // SystemSettinginitButton
             // 
-            this.SystemSettinginitButton.Location = new System.Drawing.Point(83, 56);
+            this.SystemSettinginitButton.Location = new System.Drawing.Point(83, 110);
             this.SystemSettinginitButton.Name = "SystemSettinginitButton";
             this.SystemSettinginitButton.Size = new System.Drawing.Size(128, 48);
             this.SystemSettinginitButton.TabIndex = 2;
@@ -97,7 +101,7 @@
             // 
             // addNewNETPrinterButton
             // 
-            this.addNewNETPrinterButton.Location = new System.Drawing.Point(228, 56);
+            this.addNewNETPrinterButton.Location = new System.Drawing.Point(390, 377);
             this.addNewNETPrinterButton.Name = "addNewNETPrinterButton";
             this.addNewNETPrinterButton.Size = new System.Drawing.Size(128, 48);
             this.addNewNETPrinterButton.TabIndex = 3;
@@ -106,7 +110,7 @@
             // 
             // addOKAMINETPrinterButton
             // 
-            this.addOKAMINETPrinterButton.Location = new System.Drawing.Point(228, 110);
+            this.addOKAMINETPrinterButton.Location = new System.Drawing.Point(256, 377);
             this.addOKAMINETPrinterButton.Name = "addOKAMINETPrinterButton";
             this.addOKAMINETPrinterButton.Size = new System.Drawing.Size(128, 48);
             this.addOKAMINETPrinterButton.TabIndex = 4;
@@ -115,7 +119,7 @@
             // 
             // setTimeZoneTOSAButton
             // 
-            this.setTimeZoneTOSAButton.Location = new System.Drawing.Point(83, 164);
+            this.setTimeZoneTOSAButton.Location = new System.Drawing.Point(83, 218);
             this.setTimeZoneTOSAButton.Name = "setTimeZoneTOSAButton";
             this.setTimeZoneTOSAButton.Size = new System.Drawing.Size(128, 48);
             this.setTimeZoneTOSAButton.TabIndex = 5;
@@ -125,7 +129,7 @@
             // 
             // enableFirewallForZiiPOSButton
             // 
-            this.enableFirewallForZiiPOSButton.Location = new System.Drawing.Point(374, 110);
+            this.enableFirewallForZiiPOSButton.Location = new System.Drawing.Point(228, 110);
             this.enableFirewallForZiiPOSButton.Name = "enableFirewallForZiiPOSButton";
             this.enableFirewallForZiiPOSButton.Size = new System.Drawing.Size(128, 48);
             this.enableFirewallForZiiPOSButton.TabIndex = 6;
@@ -135,7 +139,7 @@
             // 
             // checkPortOpenViewButton
             // 
-            this.checkPortOpenViewButton.Location = new System.Drawing.Point(508, 56);
+            this.checkPortOpenViewButton.Location = new System.Drawing.Point(442, 56);
             this.checkPortOpenViewButton.Name = "checkPortOpenViewButton";
             this.checkPortOpenViewButton.Size = new System.Drawing.Size(127, 48);
             this.checkPortOpenViewButton.TabIndex = 7;
@@ -145,7 +149,7 @@
             // 
             // EnableFirewallForDDAButton
             // 
-            this.EnableFirewallForDDAButton.Location = new System.Drawing.Point(374, 56);
+            this.EnableFirewallForDDAButton.Location = new System.Drawing.Point(228, 56);
             this.EnableFirewallForDDAButton.Name = "EnableFirewallForDDAButton";
             this.EnableFirewallForDDAButton.Size = new System.Drawing.Size(128, 48);
             this.EnableFirewallForDDAButton.TabIndex = 8;
@@ -153,11 +157,42 @@
             this.EnableFirewallForDDAButton.UseVisualStyleBackColor = true;
             this.EnableFirewallForDDAButton.Click += new System.EventHandler(this.EnableFirewallForDDAButton_Click);
             // 
+            // createZiitechAccountButton
+            // 
+            this.createZiitechAccountButton.Location = new System.Drawing.Point(83, 56);
+            this.createZiitechAccountButton.Name = "createZiitechAccountButton";
+            this.createZiitechAccountButton.Size = new System.Drawing.Size(128, 48);
+            this.createZiitechAccountButton.TabIndex = 9;
+            this.createZiitechAccountButton.Text = "Create Ziitech Account";
+            this.createZiitechAccountButton.UseVisualStyleBackColor = true;
+            // 
+            // disableWindowsUpdatesButton
+            // 
+            this.disableWindowsUpdatesButton.Location = new System.Drawing.Point(228, 164);
+            this.disableWindowsUpdatesButton.Name = "disableWindowsUpdatesButton";
+            this.disableWindowsUpdatesButton.Size = new System.Drawing.Size(128, 48);
+            this.disableWindowsUpdatesButton.TabIndex = 10;
+            this.disableWindowsUpdatesButton.Text = "Disable Windows Updates";
+            this.disableWindowsUpdatesButton.UseVisualStyleBackColor = true;
+            // 
+            // checkLicenseServerButton
+            // 
+            this.checkLicenseServerButton.Location = new System.Drawing.Point(442, 110);
+            this.checkLicenseServerButton.Name = "checkLicenseServerButton";
+            this.checkLicenseServerButton.Size = new System.Drawing.Size(127, 48);
+            this.checkLicenseServerButton.TabIndex = 11;
+            this.checkLicenseServerButton.Text = "check License Server";
+            this.checkLicenseServerButton.UseVisualStyleBackColor = true;
+            this.checkLicenseServerButton.Click += new System.EventHandler(this.checkLicenseServerButton_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 548);
+            this.Controls.Add(this.checkLicenseServerButton);
+            this.Controls.Add(this.disableWindowsUpdatesButton);
+            this.Controls.Add(this.createZiitechAccountButton);
             this.Controls.Add(this.EnableFirewallForDDAButton);
             this.Controls.Add(this.checkPortOpenViewButton);
             this.Controls.Add(this.enableFirewallForZiiPOSButton);
@@ -172,6 +207,7 @@
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zii.WindowsConfigurationTools";
+            this.Load += new System.EventHandler(this.MainView_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -193,6 +229,9 @@
         private System.Windows.Forms.Button enableFirewallForZiiPOSButton;
         private System.Windows.Forms.Button checkPortOpenViewButton;
         private System.Windows.Forms.Button EnableFirewallForDDAButton;
+        private System.Windows.Forms.Button createZiitechAccountButton;
+        private System.Windows.Forms.Button disableWindowsUpdatesButton;
+        private System.Windows.Forms.Button checkLicenseServerButton;
     }
 }
 

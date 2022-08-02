@@ -45,5 +45,7 @@ namespace Zii.WindowsConfigTools
         {
             this.Hide();
         }
+
+       
     }
 }

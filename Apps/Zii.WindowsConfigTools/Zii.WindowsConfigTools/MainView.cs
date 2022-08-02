@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Net;
+
 
 
 namespace Zii.WindowsConfigTools
@@ -50,6 +52,7 @@ namespace Zii.WindowsConfigTools
                 MessageBox.Show("Bat file executed !!");
                 */
 
+                /*Set Melbourne/Sydeny Time zone */
                 String timeZoneName = "AUS Eastern Standard Time";
                 var process = Process.Start(new ProcessStartInfo
                 {
@@ -79,6 +82,7 @@ namespace Zii.WindowsConfigTools
             //Process proc = null;
             try
             {
+                /*Set Adelaide Time zone */
                 String timeZoneName = "Cen. Australia Standard Time";
                 var process = Process.Start(new ProcessStartInfo
                 {
@@ -86,7 +90,7 @@ namespace Zii.WindowsConfigTools
                     FileName = "tzutil.exe",
                     Arguments = "/s \"" + timeZoneName + "\"",
                     UseShellExecute = false,
-                    CreateNoWindow = true
+                    CreateNoWindow = false
                 });
 
                 if (process != null)
@@ -148,6 +152,32 @@ namespace Zii.WindowsConfigTools
                 //Console.WriteLine(ex.StackTrace.ToString());
             }
 
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ziitech Help Tools V.1.0");
+        }
+
+        private void MainView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkLicenseServerButton_Click(object sender, EventArgs e)
+        {
+
+            var client = new HttpClient();
+            var content = await client.GetStringAsync("http://webcode.me");
+
+            Console.WriteLine(content);
+
+            HttpWebRequest myReq =(HttpWebRequest)WebRequest.Create("https://kiwi-api.ziicloud.com/Status/Version");
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://somewhere.com/client.php?locationID=1");
+            HttpWebResponse response = (HttpWebResponse)myReq.GetResponse();
+            //string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            string content = new StreamReader(myReq.GetResponse()  );
+            MessageBox.Show(myReq.ToString);
         }
     }
 }
