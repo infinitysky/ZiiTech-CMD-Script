@@ -32,26 +32,7 @@ namespace Zii.WindowsConfigTools
            // Process proc = null;
             try
             {
-                /*
-                string strCmdText;
-                strCmdText = "cd /d %~dp0 & ./WindowsSystemConfigrations/SetTimeZone-AU_MEL.bat";
-                System.Diagnostics.Process.Start("CMD.exe", strCmdText);
-                */
-                /*
-                string batDir = string.Format(@"%~dp0");
-                proc.StartInfo.WorkingDirectory = batDir;
-                
-                proc = new Process();
-                
-                proc.StartInfo.FileName =  @"./WindowsSystemConfigrations/SetTimeZone-AU_MEL.bat";
-                
-                proc.StartInfo.CreateNoWindow = false;
-                proc.Start();
-                proc.WaitForExit();
-                
-                MessageBox.Show("Bat file executed !!");
-                */
-
+               
                 /*Set Melbourne/Sydeny Time zone */
                 String timeZoneName = "AUS Eastern Standard Time";
                 var process = Process.Start(new ProcessStartInfo
@@ -138,7 +119,7 @@ namespace Zii.WindowsConfigTools
         private void EnableFirewallForDDAButton_Click(object sender, EventArgs e)
         {
             string currentPath = Directory.GetCurrentDirectory();
-            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\SetZiiPOSPort.bat";
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\SetDDAPort.bat";
             try
             {
 
@@ -167,17 +148,184 @@ namespace Zii.WindowsConfigTools
         private void checkLicenseServerButton_Click(object sender, EventArgs e)
         {
 
+
+            /*
+            HttpClient client = new HttpClient();
+
             var client = new HttpClient();
             var content = await client.GetStringAsync("http://webcode.me");
 
             Console.WriteLine(content);
+            */
 
+            /*
             HttpWebRequest myReq =(HttpWebRequest)WebRequest.Create("https://kiwi-api.ziicloud.com/Status/Version");
             //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://somewhere.com/client.php?locationID=1");
             HttpWebResponse response = (HttpWebResponse)myReq.GetResponse();
             //string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
-            string content = new StreamReader(myReq.GetResponse()  );
-            MessageBox.Show(myReq.ToString);
+            //string content = new StreamReader(myReq.GetResponse()  );
+            MessageBox.Show(response.ToString);
+
+            */
+
+            //HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("https://kiwi-api.ziicloud.com/Status/Version");
+
+            HttpWebRequest request = WebRequest.Create("https://kiwi-api.ziicloud.com/Status/Version") as HttpWebRequest;
+            //request.Accept = "application/xrds+xml";  
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            request.Timeout = 10;
+
+
+            WebHeaderCollection header = response.Headers;
+
+            var encoding = ASCIIEncoding.UTF8;
+            //using (var reader = new System.IO.StreamReader(response.GetResponseStream(), encoding))
+            using (var reader = new System.IO.StreamReader(response.GetResponseStream(), encoding))
+            {
+                string responseText = reader.ReadToEnd();
+                MessageBox.Show(responseText);
+
+            }
+            
+
+
+        }
+
+        private void autoRestartButton_Click(object sender, EventArgs e)
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\AutoRebootSystem.bat";
+            try
+            {
+
+                System.Diagnostics.Process.Start(execBatchFileName);
+                MessageBox.Show("Process completed");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                //Console.WriteLine(ex.StackTrace.ToString());
+            }
+        }
+
+        private void SystemSettinginitButton_Click(object sender, EventArgs e)
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\SystemConfig.bat";
+            try
+            {
+
+                System.Diagnostics.Process.Start(execBatchFileName);
+                MessageBox.Show("Process completed");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                //Console.WriteLine(ex.StackTrace.ToString());
+            }
+
+        }
+
+        private void createZiitechAccountButton_Click(object sender, EventArgs e)
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\CreateZiitech.bat";
+            try
+            {
+
+                System.Diagnostics.Process.Start(execBatchFileName);
+                MessageBox.Show("Process completed, please Reboot windows system");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                //Console.WriteLine(ex.StackTrace.ToString());
+            }
+
+        }
+
+        private void disableWindowsUpdatesButton_Click(object sender, EventArgs e)
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\DisableWindowsUpdate.bat";
+            try
+            {
+
+                System.Diagnostics.Process.Start(execBatchFileName);
+                MessageBox.Show("Process completed, please Reboot windows system");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                //Console.WriteLine(ex.StackTrace.ToString());
+            }
+
+        }
+
+        private void printChineseButton_Click(object sender, EventArgs e)
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\ChangeLanguageRegionChinese.bat";
+            try
+            {
+
+                System.Diagnostics.Process.Start(execBatchFileName);
+                MessageBox.Show("Process completed, please Reboot windows system");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                //Console.WriteLine(ex.StackTrace.ToString());
+            }
+
+        }
+
+        private void resyncFailedItemButton_Click(object sender, EventArgs e)
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\ReSyncFailedItems_win10.bat";
+            try
+            {
+
+                System.Diagnostics.Process.Start(execBatchFileName);
+                MessageBox.Show("Process completed");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                //Console.WriteLine(ex.StackTrace.ToString());
+            }
+
+        }
+
+        private void InstallDDAFULLButton_Click(object sender, EventArgs e)
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            String execBatchFileName = currentPath + "\\WindowsSystemConfigrations\\RemoteDDADeployment_Full_x64.bat";
+            try
+            {
+
+                System.Diagnostics.Process.Start(execBatchFileName);
+                MessageBox.Show("Process completed");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                //Console.WriteLine(ex.StackTrace.ToString());
+            }
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
