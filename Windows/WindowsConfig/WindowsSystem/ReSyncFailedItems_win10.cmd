@@ -1,6 +1,6 @@
 @echo off
 if not exist C:\Ziitech mkdir C:\Ziitech
-cd /d C:\Ziitech
+cd C:\Ziitech
 echo Set-ExecutionPolicy RemoteSigned> run.ps1
 echo ^$response=Get-Content ^'C:\Program Files (x86)\ZiiForce\Zii.Sync\profilesettings.json^' ^| ConvertFrom-Json >> run.ps1
 echo ^$dbName=^$response^.ProfileSetting^.InitialCatalog >> run.ps1
@@ -11,6 +11,6 @@ echo ^echo "update SyncTableLog set FailCount=0 where FailCount>=10;" ^>^>resync
 
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command .\run.ps1
 
-"C:\Program Files\Microsoft SQL Server\100\Tools\Binn\sqlcmd.exe" -S localhost\SQLEXPRESS2008R2 -U sa -P 0000 -i resync.sql
+"C:\Program Files\Microsoft SQL Server\100\Tools\Binn\sqlcmd.exe" -S localhost\SQLEXPRESS2008R2 -i resync.sql
 
 timeout 10
