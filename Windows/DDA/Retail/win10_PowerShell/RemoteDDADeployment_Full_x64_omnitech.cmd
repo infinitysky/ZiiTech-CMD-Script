@@ -28,6 +28,12 @@ echo cd C:\Ziitech >> downloadDDA.ps1
 echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZiiSyncSetup.exe");>> downloadDDA.ps1
 
 
+::DownLoad ZeroTire
+echo $Link = "https://download.zerotier.com/dist/ZeroTier%20One.msi">> downloadDDA.ps1
+echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
+echo cd C:\Ziitech >> downloadDDA.ps1
+echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZeroTierOne.msi");>> downloadDDA.ps1
+
 
 ::Install SQL Server Install bash
 echo SQLEXPRWT_2008R2_x64_ENU.exe /QS /ACTION=Install /FEATURES=SQLENGINE,REPLICATION,SSMS,SNAC_SDK /IACCEPTSQLSERVERLICENSETERMS /SECURITYMODE=SQL /SAPWD="0000" /INSTANCENAME="SQLEXPRESS2008R2" /SQLSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /RSSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /AGTSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /ADDCURRENTUSERASSQLADMIN="True" /BROWSERSVCSTARTUPTYPE="Automatic" /TCPENABLED="1" /NPENABLED="1">SQLServerInstall.bat
@@ -88,5 +94,12 @@ DEL SQLServerInstall.bat
 DEL SQLServerconfig.bat
 DEL ziiposAccount.sql
 ::DEL SQLEXPRWT_2008R2_x64_ENU.exe
+
+
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+
+choco upgrade chocolatey
+
+choco install -y 7zip.install vscode
 
 exit

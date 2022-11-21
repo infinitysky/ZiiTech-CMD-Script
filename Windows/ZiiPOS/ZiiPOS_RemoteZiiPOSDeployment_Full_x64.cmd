@@ -59,6 +59,13 @@ echo cd C:\Ziitech >> downloadDDA.ps1
 echo $WebClient.DownloadFile("$Link","C:\Ziitech\ziipos_init_script.sql");>> downloadDDA.ps1
 
 
+::DownLoad ZiiPOS Sync  DB Script
+echo $Link = "https://download.ziicloud.com/other/ziipos_init_script_v2.3.sql">> downloadDDA.ps1
+echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
+echo cd C:\Ziitech >> downloadDDA.ps1
+echo $WebClient.DownloadFile("$Link","C:\Ziitech\ziipos_init_script.sql");>> downloadDDA.ps1
+
+
 ::Install SQL Server Install bash
 echo SQLEXPRWT_2008R2_x64_ENU.exe /QS /ACTION=Install /FEATURES=SQLENGINE,REPLICATION,SSMS,SNAC_SDK /IACCEPTSQLSERVERLICENSETERMS /SECURITYMODE=SQL /SAPWD="0000" /INSTANCENAME="SQLEXPRESS2008R2" /SQLSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /RSSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /AGTSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /ADDCURRENTUSERASSQLADMIN="True" /BROWSERSVCSTARTUPTYPE="Automatic" /TCPENABLED="1" /NPENABLED="1">SQLServerInstall.bat
 echo exit >>SQLServerInstall.bat
@@ -113,12 +120,6 @@ type ziipos_init_script.sql>>DB.sql
 ::ZiiLocalServerSetup.exe /S
 
 
-@REM DEL ZiiLocalServerSetup.exe
-@REM DEL downloadDDA.ps1
-@REM DEL SQLServerInstall.bat
-@REM DEL SQLServerconfig.bat
-@REM DEL ziiposAccount.sql
-@REM DEL SQLEXPRWT_2008R2_x64_ENU.exe
-@REM DEL DB.sql
+
 
 exit
