@@ -13,8 +13,6 @@ echo $WebClient.DownloadFile("$Link","C:\Ziitech\SQLEXPRWT_2008R2_x64_ENU.exe");
 
 
 ::DownLoad DDA
-
-
 echo ^$response=Invoke-WebRequest -Uri 'https://wombat-api.ziicloud.com/api/vs/client-version/version?clientName=Zii.Retail_Classic^&version=1' -UseBasicParsing ^| ConvertFrom-Json >> downloadDDA.ps1
 echo $Link = $response.data.upgradeUrl >> downloadDDA.ps1
 echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
@@ -28,8 +26,15 @@ echo cd C:\Ziitech >> downloadDDA.ps1
 echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZiiSyncSetup.exe");>> downloadDDA.ps1
 
 
+::DownLoad Sync
+echo $Link = "https://download.ziicloud.com/other/AccessDatabaseEngine.rar">> downloadDDA.ps1
+echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
+echo cd C:\Ziitech >> downloadDDA.ps1
+echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZccessDatabaseEngine.rar");>> downloadDDA.ps1
+
+
 ::DownLoad ZeroTire
-echo $Link = "https://download.zerotier.com/dist/ZeroTier%20One.msi">> downloadDDA.ps1
+echo $Link = "https://download.zerotier.com/dist/ZeroTier One.msi">> downloadDDA.ps1
 echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
 echo cd C:\Ziitech >> downloadDDA.ps1
 echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZeroTierOne.msi");>> downloadDDA.ps1
@@ -88,11 +93,11 @@ start /wait SQLServerconfig.bat
 ZiiPOSClassicRetail.exe /S
 ZiiSyncSetup.exe /S
 
-DEL ZiiPOSClassicRetail.exe
-DEL downloadDDA.ps1
-DEL SQLServerInstall.bat
-DEL SQLServerconfig.bat
-DEL ziiposAccount.sql
+::DEL ZiiPOSClassicRetail.exe
+::DEL downloadDDA.ps1
+::DEL SQLServerInstall.bat
+::DEL SQLServerconfig.bat
+::DEL ziiposAccount.sql
 ::DEL SQLEXPRWT_2008R2_x64_ENU.exe
 
 
