@@ -26,11 +26,11 @@ echo cd C:\Ziitech >> downloadDDA.ps1
 echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZiiSyncSetup.exe");>> downloadDDA.ps1
 
 
-::DownLoad Sync
+::DownLoad AccessDatabaseEngine
 echo $Link = "https://download.ziicloud.com/other/AccessDatabaseEngine.rar">> downloadDDA.ps1
 echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
 echo cd C:\Ziitech >> downloadDDA.ps1
-echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZccessDatabaseEngine.rar");>> downloadDDA.ps1
+echo $WebClient.DownloadFile("$Link","C:\Ziitech\AccessDatabaseEngine.rar");>> downloadDDA.ps1
 
 
 ::DownLoad ZeroTire
@@ -91,7 +91,7 @@ start /wait SQLServerconfig.bat
 
 ::Install DDA
 ZiiPOSClassicRetail.exe /S
-ZiiSyncSetup.exe /S
+
 
 ::DEL ZiiPOSClassicRetail.exe
 ::DEL downloadDDA.ps1
@@ -106,5 +106,13 @@ ZiiSyncSetup.exe /S
 choco upgrade chocolatey
 
 choco install -y 7zip.install vscode
+
+::install sync
+ZiiSyncSetup.exe /S
+
+
+7z e AccessDatabaseEngine.rar
+
+accessdatabaseengine.exe /quiet /norestart
 
 exit
