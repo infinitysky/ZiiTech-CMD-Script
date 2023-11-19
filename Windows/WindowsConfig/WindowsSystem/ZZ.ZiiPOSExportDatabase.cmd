@@ -4,6 +4,8 @@ cd C:\Ziitech
 if not exist C:\Ziitech\backup mkdir C:\Ziitech\backup\
 cd C:\Ziitech
 
+Del C:\Ziitech\backup\backupdb.bak
+
 echo Set-ExecutionPolicy RemoteSigned> run.ps1
 echo ^$response=Get-Content ^'C:\Program Files (x86)\ZiiForce\Zii.LocalServer\profilesettings.json^' ^| ConvertFrom-Json >> run.ps1
 echo ^$dbName=^$response^.ProfileSetting^.InitialCatalog >> run.ps1

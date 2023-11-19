@@ -42,13 +42,6 @@ powercfg /SETACVALUEINDEX SCHEME_CURRENT 0012ee47-9041-4b5d-9b77-535fba8b1442 67
 
 
 
-
-REM set up the time zone
-tzutil /s "AUS Eastern Standard Time"
-
-REM set up the system locale
-powershell get-winsystemlocale
-
 REM Set Remote Desktop
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
 netsh advfirewall firewall set rule group="remote desktop" new enable=Yes

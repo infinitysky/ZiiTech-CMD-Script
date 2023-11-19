@@ -1,17 +1,18 @@
 @echo off
 
-set /p dbName="Please Enter Database Name: "
 
+if not exist C:\Ziitech mkdir C:\Ziitech
+cd C:\Ziitech
 
-echo CREATE DATABASE %dbName% >DB.sql
+::set /p dbName="Please Enter Database Name: "
+
+echo CREATE DATABASE ZiiPOS_DB >DB.sql
 Echo Go >> DB.sql
 echo USE %dbName% >DB.sql
 Echo Go >> DB.sql
 
 
 
-if not exist C:\Ziitech mkdir C:\Ziitech
-cd C:\Ziitech
 
 REM Install chocolatey 
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
@@ -23,29 +24,29 @@ choco install -y 7zip.install vscode dotnetcore-3.1-sdk
 
 
 ::Create a new account
-if not exist C:\Users\Ziitech (
-	net user /add Ziitech 0000
-	net localgroup administrators Ziitech /add
-	WMIC USERACCOUNT WHERE Name='Ziitech' SET PasswordExpires=FALSE
-	reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /t REG_SZ /d "Ziitech" /f
-	reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultPassword /t REG_SZ /d "0000" /f
-	reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /t REG_SZ /d "1" /f
-
-)
+::if not exist C:\Users\Ziitech (
+::	net user /add Ziitech 0000
+::	net localgroup administrators Ziitech /add
+::	WMIC USERACCOUNT WHERE Name='Ziitech' SET PasswordExpires=FALSE
+::	reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultUserName /t REG_SZ /d "Ziitech" /f
+::	reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultPassword /t REG_SZ /d "0000" /f
+::	reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoAdminLogon /t REG_SZ /d "1" /f
+::
+::)
 
 
 ::Initialization power shell for windows 10/7 X64 bit
 echo Set-ExecutionPolicy RemoteSigned> downloadDDA.ps1
 
 ::DownLoad Sqlserver 64Bit
-echo $Link = "https://download.ziicloud.com/databases/SQLEXPRWT_x64_ENU.exe">> downloadDDA.ps1
-echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
-echo cd C:\Ziitech >> downloadDDA.ps1
-echo $WebClient.DownloadFile("$Link","C:\Ziitech\SQLEXPRWT_2008R2_x64_ENU.exe");>> downloadDDA.ps1
+::echo $Link = "https://download.ziicloud.com/databases/SQLEXPRWT_x64_ENU.exe">> downloadDDA.ps1
+::echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
+::echo cd C:\Ziitech >> downloadDDA.ps1
+::echo $WebClient.DownloadFile("$Link","C:\Ziitech\SQLEXPRWT_2008R2_x64_ENU.exe");>> downloadDDA.ps1
 
 
 ::DownLoad ZiiPOS
-echo $Link = "https://download.ziicloud.com/programs/ziipos/ZiiLocalServerSetup(v2.3.2.4).exe">> downloadDDA.ps1
+echo $Link = "https://download.ziicloud.com/programs/ziipos/ZiiLocalServerSetup(v2.5.1.1).exe">> downloadDDA.ps1
 echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
 echo cd C:\Ziitech >> downloadDDA.ps1
 echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZiiLocalServerSetup.exe");>> downloadDDA.ps1
@@ -53,21 +54,22 @@ echo $WebClient.DownloadFile("$Link","C:\Ziitech\ZiiLocalServerSetup.exe");>> do
 
 
 ::DownLoad ZiiPOS init DB Script
-echo $Link = "https://download.ziicloud.com/other/ziipos_init_script_v2.3.sql">> downloadDDA.ps1
+echo $Link = "https://download.ziicloud.com/other/ziipos_init_script_v2.4.sql">> downloadDDA.ps1
 echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
 echo cd C:\Ziitech >> downloadDDA.ps1
 echo $WebClient.DownloadFile("$Link","C:\Ziitech\ziipos_init_script.sql");>> downloadDDA.ps1
 
 
 ::DownLoad ZiiPOS Sync  DB Script
-echo $Link = "https://download.ziicloud.com/other/ziipos_init_script_v2.3.sql">> downloadDDA.ps1
-echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
-echo cd C:\Ziitech >> downloadDDA.ps1
-echo $WebClient.DownloadFile("$Link","C:\Ziitech\ziipos_init_script.sql");>> downloadDDA.ps1
+::echo $Link = "https://download.ziicloud.com/other/ziipos_init_script_v2.4.sql">> downloadDDA.ps1
+::echo $WebClient = New-Object System.Net.WebClient>> downloadDDA.ps1
+::echo cd C:\Ziitech >> downloadDDA.ps1
+::echo $WebClient.DownloadFile("$Link","C:\Ziitech\ziipos_init_script.sql");>> downloadDDA.ps1
 
 
 ::Install SQL Server Install bash
-echo SQLEXPRWT_2008R2_x64_ENU.exe /QS /ACTION=Install /FEATURES=SQLENGINE,REPLICATION,SSMS,SNAC_SDK /IACCEPTSQLSERVERLICENSETERMS /SECURITYMODE=SQL /SAPWD="0000" /INSTANCENAME="SQLEXPRESS2008R2" /SQLSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /RSSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /AGTSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /ADDCURRENTUSERASSQLADMIN="True" /BROWSERSVCSTARTUPTYPE="Automatic" /TCPENABLED="1" /NPENABLED="1">SQLServerInstall.bat
+echo cd C:\Ziitech>SQLServerInstall.bat
+echo SQLEXPRWT_2008R2_x64_ENU.exe /QS /ACTION=Install /FEATURES=SQLENGINE,REPLICATION,SSMS,SNAC_SDK /IACCEPTSQLSERVERLICENSETERMS /SECURITYMODE=SQL /SAPWD="0000" /INSTANCENAME="SQLEXPRESS2008R2" /SQLSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /RSSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /AGTSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" /ADDCURRENTUSERASSQLADMIN="True" /BROWSERSVCSTARTUPTYPE="Automatic" /TCPENABLED="1" /NPENABLED="1">>SQLServerInstall.bat
 echo exit >>SQLServerInstall.bat
 
 :: sql server config
@@ -84,6 +86,7 @@ echo reg add "HKLM\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL10_50.SQLEXPRESS
 echo net start MSSQL$SQLEXPRESS2008R2 >>SQLServerconfig.bat
 
 :: import ZiiPos account setting
+echo "C:\Program Files\Microsoft SQL Server\100\Tools\Binn\sqlcmd.exe" -S localhost\SQLEXPRESS2008R2 -i DB.sql 
 echo "C:\Program Files\Microsoft SQL Server\100\Tools\Binn\sqlcmd.exe" -S localhost\SQLEXPRESS2008R2 -i ziiposAccount.sql >>SQLServerconfig.bat
 
 ::Enable Windows Firewall Port
@@ -117,7 +120,7 @@ type ziipos_init_script.sql>>DB.sql
 
 
 ::Install ZiiPOS
-::ZiiLocalServerSetup.exe /S
+ZiiLocalServerSetup.exe /S
 
 
 
