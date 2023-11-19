@@ -1,3 +1,5 @@
+::V1.1
+
 @echo off
 if not exist C:\Ziitech mkdir C:\Ziitech
 cd C:\Ziitech
@@ -6,12 +8,13 @@ cd C:\Ziitech
 
 Del C:\Ziitech\backup\backupdb.bak
 
+
 echo Set-ExecutionPolicy RemoteSigned> run.ps1
 echo ^$response=Get-Content ^'C:\Program Files (x86)\ZiiForce\Zii.LocalServer\profilesettings.json^' ^| ConvertFrom-Json >> run.ps1
 echo ^$dbName=^$response^.ProfileSetting^.InitialCatalog >> run.ps1
 
 
-echo ^echo ^"USE $dbname;^"^>resync.sql >> run.ps1
+echo ^echo ^"USE $dbname;^"^>backupDB.sql >> run.ps1
 echo ^echo "BACKUP DATABASE $dbname  TO DISK = 'C:\Ziitech\backup\backupdb.bak';" ^>^>backupDB.sql >> run.ps1
 
 
